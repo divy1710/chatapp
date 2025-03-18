@@ -11,8 +11,12 @@ app.use(express.json());
 //routes
 app.use("/api/v1/user",userRoute);
 
+app.get("/",(req,res)=>{
+    res.send("<h1>Hello World </h1>")
+})
+
 
 app.listen(PORT,()=>{
     connectDB();
-    console.log('server is running');
+    console.log(`server is running on prot : ${PORT}`);
 })
